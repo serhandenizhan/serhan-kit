@@ -29,6 +29,21 @@ Start from the lowest tier that can do the job; escalate one tier only if the wo
 
 Change a tier's model in `plugins/serhan/agents/<agent>.md` (`model:` and `effort:`) and keep the table in `plugins/serhan/skills/serhan/SKILL.md` section 3 in sync.
 
+## Progress panel (optional mod)
+
+`serhan-progress` is a separate plugin that adds a live view of what the flow is doing:
+
+- **Progress bar** above the prompt: task title, phase (plan, design, delegate, review), accepted tasks out of planned, and a button with the number of running agents that opens the panel.
+- **Agents panel** (`/agents-info` toggles it): running, finished and planned subagents, each with its model and effort, task progress, context usage, estimated cost and elapsed time. Every tier has its own animated crab costume: expert (astronaut), investigator (detective), precise (engineer), standard (chef), quick (racer).
+- **Languages:** English, Russian and Turkish (`language` option, `auto` by default).
+
+It works with any subagents, but it is built for `/serhan`: the skill reports the plan and accepted tasks to it, and each worker reports its own steps. See [plugins/serhan-progress/README.md](plugins/serhan-progress/README.md).
+
+| Plugin | What it is |
+| --- | --- |
+| `serhan` | the `/serhan` skill and the five tier agents |
+| `serhan-progress` | the progress bar and agents panel (optional) |
+
 ## Install
 
 ```
