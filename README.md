@@ -33,6 +33,8 @@ Change a tier's model in `plugins/serhan/agents/<agent>.md` (`model:` and `effor
 
 `serhan-progress` is a separate plugin that adds a live view of what the flow is doing:
 
+![Agents panel](docs/panel.png)
+
 - **Progress bar** above the prompt: task title, phase (plan, design, delegate, review), accepted tasks out of planned, and a button with the number of running agents that opens the panel.
 - **Agents panel** (`/agents-info` toggles it): running, finished and planned subagents, each with its model and effort, task progress, context usage, estimated cost and elapsed time. Every tier has its own animated crab costume: expert (astronaut), investigator (detective), precise (engineer), standard (chef), quick (racer).
 - **Languages:** English, Russian and Turkish (`language` option, `auto` by default).
