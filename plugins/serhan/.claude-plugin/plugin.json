@@ -1,0 +1,8 @@
+{
+  "name": "serhan",
+  "version": "1.0.0",
+  "description": "Orchestrated delivery flow: the session model plans, owns design and reviews; five tiered worker subagents (Sonnet/Opus) implement. Derived from johnnyvizz/claude-kit (savvy-flow).",
+  "author": { "name": "serhan" },
+  "license": "MIT",
+  "keywords": ["skill", "orchestration", "subagents"]
+}

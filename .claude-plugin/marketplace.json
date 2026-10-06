@@ -1,0 +1,25 @@
+{
+  "name": "serhan-kit",
+  "owner": {
+    "name": "serhan"
+  },
+  "metadata": {
+    "description": "serhan's Claude Code skills."
+  },
+  "plugins": [
+    {
+      "name": "serhan",
+      "source": "./plugins/serhan",
+      "description": "Skill: plan, delegate to tiered worker subagents (max 3 parallel), review.",
+      "version": "1.0.0",
+      "category": "skill"
+    },
+    {
+      "name": "serhan-progress",
+      "source": "./plugins/serhan-progress",
+      "description": "Mod: progress bar above the prompt and a live agents panel for the serhan flow.",
+      "version": "1.0.0",
+      "category": "mod"
+    }
+  ]
+}
