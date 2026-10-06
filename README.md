@@ -2,7 +2,18 @@
 
 A Claude Code plugin with an orchestrated delivery flow. Run `/serhan <task>` (`/serhan:serhan` when installed as a plugin): the session model plans, owns design, delegates implementation to tiered worker subagents (at most 3 in parallel) and reviews what they return.
 
-Derived from [johnnyvizz/claude-kit](https://github.com/johnnyvizz/claude-kit) (`savvy-flow`, MIT). Renamed, retiered for lower usage cost, and with a parallelism cap added.
+Derived from [johnnyvizz/claude-kit](https://github.com/johnnyvizz/claude-kit) (`savvy-flow`, MIT).
+
+## Why this fork
+
+The original is tuned for heavy usage: most workers run on Opus at high effort, and independent tasks fan out without a limit. This version is tuned for people on a $20 plan who want to keep token usage reasonable:
+
+- **Sonnet-first tiers.** Three of the five workers run on Sonnet; Opus is kept for investigation and the rare hardest tasks.
+- **Start low, escalate on failure.** When unsure which tier to use, the orchestrator starts with the cheaper one and moves a task up only if the worker comes back blocked.
+- **At most 3 workers in parallel.** Extra ready tasks run in waves, so usage and rate limits are not hit all at once.
+- **Reserve top tier.** `serhan-expert` is used only when a task clearly needs it.
+
+Other changes: renamed everything to `serhan`, and the progress mod has a Turkish panel (`tr`).
 
 ## Tiers
 
